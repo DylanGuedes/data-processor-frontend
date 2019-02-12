@@ -1,0 +1,20 @@
+<h3>List</h3>
+
+<table class="ui celled table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Edit</th>
+      <th>Remove</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each this.model as |tl|}}
+      <tr>
+        <td>{{#link-to 'spark-templates.show' tl.id}}{{tl.title}}{{/link-to}}</td>
+        <td>Edit</td>
+        <td>Remove</td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>

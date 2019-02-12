@@ -1,0 +1,13 @@
+<h1>{{this.model.title}}</h1>
+
+<div class="ui top attached tabular menu">
+  {{#link-to 'spark-templates.show.schema_params' class='ui item'}}Schema Params{{/link-to}}
+
+  {{#link-to 'spark-templates.show.interscity_params' class='ui item'}}InterSCity Params{{/link-to}}
+
+  {{#link-to 'spark-templates.show.functional_params' class='ui item'}}Functional Params{{/link-to}}
+
+  {{#link-to 'spark-templates.show.publish_strategy_params' class='ui item'}}Publish Strategy Params{{/link-to}}
+</div>
+
+{{outlet}}

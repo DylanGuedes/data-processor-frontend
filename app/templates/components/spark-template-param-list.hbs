@@ -1,0 +1,29 @@
+{{yield}}
+
+<div class="ui segment">
+  <div class="ui form">
+    <div class="grouped inline fields">
+      <div class="field">
+        {{input value=""}}
+      </div>
+
+      <div class="ui field">
+        {{input value=""}}
+      </div>
+    </div>
+  </div>
+
+  <div class="ui selection list divided">
+    {{#each-in this.prms as |key val|}}
+    <div class="item">
+      <div class="right floated content">
+        <div class="ui red button">X</div>
+      </div>
+      <div class="content">
+        <div class="header">{{key}}</div>
+        {{val}}
+      </div>
+    </div>
+    {{/each-in}}
+  </div>
+</div>

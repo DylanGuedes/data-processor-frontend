@@ -1,5 +1,10 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-{{welcome-page}}
-{{!-- Feel free to remove this! --}}
+<div class="ui menu">
+  <a class="header item" href="/">InterSCity</a>
+  {{#link-to "spark-templates" class="item"}}Templates{{/link-to}}
+  <a class="item" href="/">Jobs</a>
+  <a class="item" href="/">Handlers</a>
+</div>
 
-{{outlet}}
+<div class="ui main text container">
+  {{outlet}}
+</div>
