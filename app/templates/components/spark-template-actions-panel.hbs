@@ -1,0 +1,19 @@
+{{yield}}
+
+<button class="ui small green icon button">
+  {{#intro-js/step step=7 intro="That's enough. Now, schedule a new job!"}}
+    <i class="icon plus"></i>
+  {{/intro-js/step}}
+</button>
+
+<button class="ui small blue icon button">
+  <i class="icon edit"></i>
+</button>
+
+<button class="ui small icon button">
+  <i class="icon clone"></i>
+</button>
+
+<button class="ui small red icon button" {{action "deleteTemplate"}}>
+  <i class="icon close"></i>
+</button>

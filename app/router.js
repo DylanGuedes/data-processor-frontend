@@ -7,8 +7,12 @@ const Router = EmberRouter.extend({
 });
 
 Router.map(function() {
+  this.route('tutorial');
+  this.route('jobs');
+  this.route('handlers');
   this.route('spark-templates', function() {
     this.route('index');
+    this.route('new');
     this.route('show', { path: '/:tl_id' }, function() {
       this.route('schema_params');
       this.route('interscity_params');

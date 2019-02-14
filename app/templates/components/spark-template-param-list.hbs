@@ -1,29 +1,55 @@
 {{yield}}
 
-<div class="ui segment">
+<div class="ui segment spark-template-param-list">
+  <h3 class="ui dividing header">Add New Param</h3>
+
   <div class="ui form">
-    <div class="grouped inline fields">
+    <div class="three fields">
       <div class="field">
-        {{input value=""}}
+        {{#intro-js/step step=4 intro="Let's add a new field for our resource: the temperature of the resource. Fill the field with `temperature` value."}}
+          {{input value=paramTitle placeholder="Param title..." class="param-title-input"}}
+        {{/intro-js/step}}
       </div>
 
       <div class="ui field">
-        {{input value=""}}
+        {{#intro-js/step step=5 intro="Now, fill in its type: <b>double</b>."}}
+          {{input value=paramValue placeholder="Param Value..." class="param-value-input"}}
+        {{/intro-js/step}}
+      </div>
+
+      <div class="ui field">
+        {{#intro-js/step step=6 intro="Now, send it!"}}
+          <button class="ui green button add-param" {{action "addParam"}}>Add Param</button>
+        {{/intro-js/step}}
       </div>
     </div>
   </div>
 
-  <div class="ui selection list divided">
-    {{#each-in this.prms as |key val|}}
-    <div class="item">
-      <div class="right floated content">
-        <div class="ui red button">X</div>
-      </div>
-      <div class="content">
-        <div class="header">{{key}}</div>
-        {{val}}
-      </div>
-    </div>
-    {{/each-in}}
+  <h3 class="ui dividing header">Template Params</h3>
+
+  <div class="ui segment">
+    <table class="ui very basic celled padded table">
+      <thead>
+        <tr>
+          <th>Param Title</th>
+          <th>Param Value</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        {{#each-in this.prms as |key val|}}
+          <tr>
+            <td class="param-key">{{key}}</td>
+            <td class="param-value">{{val}}</td>
+            <td class="collapsing">
+              <button class="mini ui compact icon red button" {{action "deleteParam" key}}>
+                <i class="ui close icon"></i>
+              </button>
+            </td>
+          </tr>
+        {{/each-in}}
+      </tbody>
+    </table>
   </div>
 </div>

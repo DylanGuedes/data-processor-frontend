@@ -1,8 +1,12 @@
-<div class="ui menu">
+{{#if this.tutorial.ongoingTutorial}}
+  {{intro-js start-if=true}}
+{{/if}}
+
+<div class="ui secondary menu">
   <a class="header item" href="/">InterSCity</a>
   {{#link-to "spark-templates" class="item"}}Templates{{/link-to}}
-  <a class="item" href="/">Jobs</a>
-  <a class="item" href="/">Handlers</a>
+  {{#link-to "spark-templates" class="item"}}Jobs{{/link-to}}
+  {{#link-to "handlers" class="item"}}Handlers{{/link-to}}
 </div>
 
 <div class="ui main text container">

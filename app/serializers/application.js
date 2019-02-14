@@ -1,8 +1,8 @@
 import DS from 'ember-data';
-import { underscore } from '@ember/string';
+import { decamelize } from '@ember/string';
 
 export default DS.JSONAPISerializer.extend({
   keyForAttribute(attr) {
-    return attr;
+    return decamelize(attr);
   }
 });

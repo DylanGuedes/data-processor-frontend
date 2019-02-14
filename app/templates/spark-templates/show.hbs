@@ -1,13 +1,23 @@
-<h1>{{this.model.title}}</h1>
+{{#intro-js/step step=1 intro="You are now seeing a template home. At the end of this tour, you will schedule a job that use this template as a base for a Spark job."}}
+  <h1>{{this.model.title}}</h1>
+{{/intro-js/step}}
 
-<div class="ui top attached tabular menu">
-  {{#link-to 'spark-templates.show.schema_params' class='ui item'}}Schema Params{{/link-to}}
-
-  {{#link-to 'spark-templates.show.interscity_params' class='ui item'}}InterSCity Params{{/link-to}}
-
-  {{#link-to 'spark-templates.show.functional_params' class='ui item'}}Functional Params{{/link-to}}
-
-  {{#link-to 'spark-templates.show.publish_strategy_params' class='ui item'}}Publish Strategy Params{{/link-to}}
+<div class="ui segment">
+  {{spark-template-actions-panel tl=this.model}}
 </div>
+
+{{#intro-js/step step=2 intro="First, let's customize a few parameters! There are 4 types of parameters: schema, interscity's, functional's and publish strategies."}}
+  <div class="ui top attached tabular menu">
+    {{#intro-js/step step=3 intro="The first type, named <b>schema</b>, is related to the schema of the resource registered at InterSCity. The key is the name of the field, and the value its type (double, integer or string)."}}
+      {{#link-to "spark-templates.show.schema_params" class="ui item"}}Schema Params{{/link-to}}
+    {{/intro-js/step}}
+
+    {{#link-to "spark-templates.show.interscity_params" class="ui item"}}InterSCity Params{{/link-to}}
+
+    {{#link-to "spark-templates.show.functional_params" class="ui item"}}Functional Params{{/link-to}}
+
+    {{#link-to "spark-templates.show.publish_strategy_params" class="ui item"}}Publish Strategy Params{{/link-to}}
+  </div>
+{{/intro-js/step}}
 
 {{outlet}}
