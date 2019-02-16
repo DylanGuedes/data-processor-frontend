@@ -3,7 +3,7 @@ import { computed } from '@ember/object';
 
 export default DS.Model.extend({
   title: DS.attr(),
-  params: DS.attr(),
+  user_params: DS.attr(),
   handler: DS.attr(),
   scheduledJobs: DS.attr(),
   getSchemaParams: computed('params', function() {

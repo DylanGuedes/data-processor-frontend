@@ -11,25 +11,25 @@
   </thead>
   <tbody>
     {{#each this.model as |tl|}}
-      <tr>
-        {{#intro-js/step step=2 intro="Pick a template"}}
-          <td class="single line">{{#link-to "spark-templates.show" tl.id}}{{tl.title}}{{/link-to}}</td>
-        {{/intro-js/step}}
-        <td class="collapsing">{{spark-template-actions-panel tl=tl}}</td>
-        <td>
-          {{ui-rating
-            initialRating=rating
-            rating=rating
-            maxRating=10
-            onRate=(action (mut rating))}}
-        </td>
-        <td>{{tl.scheduledJobs}}</td>
-      </tr>
+    <tr>
+      {{#intro-js/step step=2 intro="Pick a template"}}
+      <td class="single line">{{#link-to "spark-templates.show" tl.id}}{{tl.title}}{{/link-to}}</td>
+      {{/intro-js/step}}
+      <td class="collapsing">{{spark-template-actions-panel tl=tl}}</td>
+      <td>
+        {{ui-rating
+        initialRating=rating
+        rating=rating
+        maxRating=10
+        onRate=(action (mut rating))}}
+      </td>
+      <td>{{tl.scheduledJobs}}</td>
+    </tr>
     {{/each}}
   </tbody>
   <tfoot>
     <tr>
-      <th>{{#link-to "spark-templates.new" tagName="button" class="large ui green button"}}New Template{{/link-to}}</th>
+      <th>{{#link-to "job-templates.new" tagName="button" class="large ui green button"}}New Template{{/link-to}}</th>
       <th colspan="5">
         <div class="ui right floated pagination menu">
           <a class="icon item">

@@ -10,7 +10,11 @@ Router.map(function() {
   this.route('tutorial');
   this.route('jobs');
   this.route('handlers');
-  this.route('spark-templates', function() {
+  this.route('job-scripts', function() {
+    this.route('index');
+    this.route('new');
+  });
+  this.route('job-templates', function() {
     this.route('index');
     this.route('new');
     this.route('show', { path: '/:tl_id' }, function() {

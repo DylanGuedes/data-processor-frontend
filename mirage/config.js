@@ -1,6 +1,6 @@
 export default function() {
   this.namespace = '/api';
-  this.urlPrefix = 'http://localhost:4545';
+  this.urlPrefix = 'http://localhost:4000';
 
   this.get('/spark-templates', function() {
     return {

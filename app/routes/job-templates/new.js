@@ -11,6 +11,6 @@ export default Route.extend({
     }
   },
   model() {
-    return this.store.findAll('handler');
+    return this.store.findAll('job-script');
   }
 });

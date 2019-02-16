@@ -11,6 +11,6 @@ export default Route.extend({
     }
   },
   model() {
-    return this.store.findAll('spark-template');
+    return this.store.findAll('job-template');
   }
 });
