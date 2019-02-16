@@ -1,3 +1,14 @@
-<h1>Blabla</h1>
+<h1>Available Scripts</h1>
 
-{{#link-to "job-scripts.new" class="ui button"}}Add Script{{/link-to}}
+{{#link-to "job-scripts.new" class="ui green button"}}Add Script{{/link-to}}
+
+{{#each this.model as |script|}}
+  <div class="ui segment">
+    <h3>{{script.title}}</h3>
+    <p>{{script.path}}</p>
+    {{script.language}} Code:
+    {{#code-block language=script.language}}
+      {{script.code}}
+    {{/code-block}}
+  </div>
+{{/each}}
