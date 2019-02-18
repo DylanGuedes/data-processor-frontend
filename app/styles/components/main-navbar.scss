@@ -1,0 +1,16 @@
+.ui.secondary.menu {
+  a.item {
+    color: #bbbbbb;
+    font-size: 25px;
+    font-family: Cantarell;
+    &:hover {
+      color: white;
+    }
+  }
+
+  a.item.active {
+    &:hover {
+    }
+    font-weight: 900;
+  }
+}

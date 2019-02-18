@@ -3,21 +3,36 @@
 {{/intro-js/step}}
 
 <div class="ui segment">
-  {{spark-template-actions-panel tl=this.model}}
+  <div class="ui grid">
+    <div class="five wide column">
+      <div class="ui segment">
+        <h4>Actions</h4>
+        <div class="ui vertical buttons basic fluid vertical-aligned">
+          <button class="ui labeled green icon big button"><i class="add icon"></i>Schedule</button>
+          <button class="ui labeled blue icon big button"><i class="clone icon"></i>Clone</button>
+          <button class="ui labeled icon big button"><i class="edit icon"></i>Edit</button>
+          <button class="ui labeled red icon big button"><i class="remove icon"></i>Remove</button>
+        </div>
+      </div>
+    </div>
+    <div class="eleven wide column">
+      <div class="ui segment">
+        <h4>Params</h4>
+        {{#intro-js/step step=2 intro="First, let's customize a few parameters! There are 4 types of parameters: schema, interscity's, functional's and publish strategies."}}
+        <div class="ui top attached tabular menu">
+          {{#intro-js/step step=3 intro="The first type, named <b>schema</b>, is related to the schema of the resource registered at InterSCity. The key is the name of the field, and the value its type (double, integer or string)."}}
+            {{#link-to "job-templates.show.schema_params" class="ui item"}}Schema Params{{/link-to}}
+          {{/intro-js/step}}
+
+          {{#link-to "job-templates.show.interscity_params" class="ui item"}}InterSCity Params{{/link-to}}
+
+          {{#link-to "job-templates.show.functional_params" class="ui item"}}Functional Params{{/link-to}}
+        </div>
+        {{/intro-js/step}}
+        {{outlet}}
+      </div>
+    </div>
+  </div>
 </div>
 
-{{#intro-js/step step=2 intro="First, let's customize a few parameters! There are 4 types of parameters: schema, interscity's, functional's and publish strategies."}}
-  <div class="ui top attached tabular menu">
-    {{#intro-js/step step=3 intro="The first type, named <b>schema</b>, is related to the schema of the resource registered at InterSCity. The key is the name of the field, and the value its type (double, integer or string)."}}
-      {{#link-to "job-templates.show.schema_params" class="ui item"}}Schema Params{{/link-to}}
-    {{/intro-js/step}}
 
-    {{#link-to "job-templates.show.interscity_params" class="ui item"}}InterSCity Params{{/link-to}}
-
-    {{#link-to "job-templates.show.functional_params" class="ui item"}}Functional Params{{/link-to}}
-
-    {{#link-to "job-templates.show.publish_strategy_params" class="ui item"}}Publish Strategy Params{{/link-to}}
-  </div>
-{{/intro-js/step}}
-
-{{outlet}}

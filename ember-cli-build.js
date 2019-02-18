@@ -6,6 +6,9 @@ module.exports = function(defaults) {
   let app = new EmberApp(defaults, {
     'ember-prism': {
       'plugins': ['line-highlight', 'highlight-keyword']
+    },
+    sassOptions: {
+      extension: 'scss'
     }
   });
 
