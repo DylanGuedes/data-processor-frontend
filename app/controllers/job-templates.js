@@ -12,7 +12,7 @@ export default Controller.extend({
 
       const _this = this;
 
-      store.query('spark-template', {
+      store.query('job-template', {
         filter: {
           title: "Tutorial's Template"
         }
@@ -21,7 +21,7 @@ export default Controller.extend({
           console.log("Please, populate data-processor with seeds.");
         } else {
           const template = tutorialTemplates.get("firstObject");
-          _this.transitionToRoute('spark-templates.show.schema_params', template);
+          _this.transitionToRoute('job-templates.show.schema_params', template);
           _this.get('tutorial').set('ongoingTutorial', true);
         }
       }).catch(function(err) {

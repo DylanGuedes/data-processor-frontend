@@ -13,6 +13,8 @@ Router.map(function() {
   this.route('job-scripts', function() {
     this.route('index');
     this.route('new');
+    this.route('show', { path: '/:id' }, function() {
+    });
   });
   this.route('job-templates', function() {
     this.route('index');

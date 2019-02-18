@@ -8,7 +8,7 @@ export default Component.extend({
       this.get('tl').deleteRecord();
       if (this.get('tl').get('isDeleted')) {
         this.get('tl').save().then(() => {
-          this.get('router').transitionTo('spark-templates.index');
+          this.get('router').transitionTo('job-templates.index');
         });
       }
     }

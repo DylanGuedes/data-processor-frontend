@@ -16,7 +16,7 @@ export default Controller.extend({
       });
 
       scriptInstance.save().then(() => {
-        this.transitionToRoute('job-scripts.show');
+        this.transitionToRoute('job-scripts.show', scriptInstance);
       });
     }
   }

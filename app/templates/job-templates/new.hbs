@@ -4,18 +4,18 @@
   <div class="ui form">
     <div class="field">
       <label>Title</label>
-      {{input value=templateTitle placeholder="Template title..."}}
+      {{input value=title placeholder="Template title..."}}
     </div>
 
     <div class="ui field">
-      <label>Handler</label>
+      <label>Script</label>
       <div class="ui fluid search selection dropdown">
-        {{input value=templateHandl type="hidden" name="handler"}}
+        {{input value=scriptId type="hidden" name="script"}}
         <i class="dropdown icon"></i>
-        <div class="default text">Select a handler</div>
+        <div class="default text">Select a script</div>
         <div class="menu">
-          {{#each this.model as |handl|}}
-            <div class="item" data-value={{handl.title}}>{{handl.title}}</div>
+          {{#each this.model as |script|}}
+            <div class="item" data-value={{script.id}}>{{script.title}}</div>
           {{/each}}
         </div>
       </div>

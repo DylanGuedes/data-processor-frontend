@@ -5,7 +5,7 @@ export default Controller.extend({
   tutorial: service(),
   actions: {
     startTutorial() {
-      this.transitionToRoute('spark-templates.index');
+      this.transitionToRoute('job-templates.index');
       this.get('tutorial').set('ongoingTutorial', true);
     }
   }

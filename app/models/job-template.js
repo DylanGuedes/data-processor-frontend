@@ -3,19 +3,16 @@ import { computed } from '@ember/object';
 
 export default DS.Model.extend({
   title: DS.attr(),
-  user_params: DS.attr(),
-  handler: DS.attr(),
+  userParams: DS.attr(),
   scheduledJobs: DS.attr(),
-  getSchemaParams: computed('params', function() {
-    return this.params['schema'];
+  jobScript: DS.belongsTo('job-script'),
+  getSchemaParams: computed('userParams', function() {
+    return this.userParams['schema'];
   }),
-  getInterscityParams: computed('params', function() {
-    return this.params['interscity'];
+  getInterscityParams: computed('userParams', function() {
+    return this.userParams['interscity'];
   }),
-  getFunctionalParams: computed('params', function() {
-    return this.params['functionalParams'];
-  }),
-  getPublishStrategy: computed('params', function() {
-    return this.params['publishStrategy'];
+  getFunctionalParams: computed('userParams', function() {
+    return this.userParams['functionalParams'];
   })
 });
