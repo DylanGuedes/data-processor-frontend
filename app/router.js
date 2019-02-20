@@ -20,10 +20,12 @@ Router.map(function() {
     this.route('index');
     this.route('new');
     this.route('show', { path: '/:tl_id' }, function() {
+      this.route('extra_info');
       this.route('schema_params');
       this.route('interscity_params');
       this.route('functional_params');
       this.route('publish_strategy_params');
+      this.route('actions');
     });
   });
 });

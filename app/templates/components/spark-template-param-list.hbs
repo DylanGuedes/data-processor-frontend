@@ -1,8 +1,8 @@
 {{yield}}
 
-<div class="ui segment spark-template-param-list">
-  <h3 class="ui dividing header">Add New Param</h3>
+<h2 class="ui top attached sub header">Add New Param</h2>
 
+<div class="ui attached segment">
   <div class="ui form">
     <div class="three fields">
       <div class="field">
@@ -19,37 +19,31 @@
 
       <div class="ui field">
         {{#intro-js/step step=6 intro="Now, send it!"}}
-          <button class="ui green button add-param" {{action "addParam"}}>Add Param</button>
+          <button class="ui labeled icon fluid green button add-param" {{action "addParam"}}>
+            <i class="plus icon"></i>Add Param
+          </button>
         {{/intro-js/step}}
       </div>
     </div>
   </div>
+</div>
 
-  <h3 class="ui dividing header">Template Params</h3>
+<h2 class="ui top attached sub header">Template Params</h2>
 
-  <div class="ui segment">
-    <table class="ui very basic celled padded table">
-      <thead>
+<div class="ui attached segment">
+  <table class="ui very basic celled padded table">
+    <tbody>
+      {{#each-in this.prms as |key val|}}
         <tr>
-          <th>Param</th>
-          <th>Value</th>
-          <th>Delete</th>
+          <td class="param-key">{{key}}</td>
+          <td class="param-value">{{val}}</td>
+          <td class="collapsing">
+            <button class="mini ui compact icon red button" {{action "deleteParam" key}}>
+              <i class="ui close icon"></i>
+            </button>
+          </td>
         </tr>
-      </thead>
-
-      <tbody>
-        {{#each-in this.prms as |key val|}}
-          <tr>
-            <td class="param-key">{{key}}</td>
-            <td class="param-value">{{val}}</td>
-            <td class="collapsing">
-              <button class="mini ui compact icon red button" {{action "deleteParam" key}}>
-                <i class="ui close icon"></i>
-              </button>
-            </td>
-          </tr>
-        {{/each-in}}
-      </tbody>
-    </table>
-  </div>
+      {{/each-in}}
+    </tbody>
+  </table>
 </div>

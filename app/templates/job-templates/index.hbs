@@ -1,7 +1,9 @@
 <h1 class="ui header center aligned">Available Templates</h1>
 
+{{#link-to "job-templates.new" class="ui labeled icon green button" tagName="button"}}<i class="plus icon"></i>New Template{{/link-to}}
+
 <table class="ui celled table">
-  <thead>
+  <thead class="ui inverted blue table">
     <tr>
       <th>Name</th>
       <th>
@@ -29,16 +31,19 @@
   <tbody>
     {{#each this.model as |tl|}}
       <tr>
-        {{#intro-js/step step=2 intro="Pick a template"}}
-          <td class="single line">{{#link-to "job-templates.show" tl.id}}{{tl.title}}{{/link-to}}</td>
-        {{/intro-js/step}}
-        <td>{{job-template-action-button size="small" color="green" icon="plus"}}</td>
-        <td>{{job-template-edit-button templateId=tl.id}}</td>
-        <td>{{job-template-action-button size="small" color="gray" icon="clone"}}</td>
-        <td>{{job-template-action-button size="small" color="red" icon="close"}}</td>
+        <td>
+          {{#intro-js/step step=2 intro="Pick a template"}}
+            {{#link-to "job-templates.show" tl.id}}
+              {{tl.title}}
+            {{/link-to}}
+          {{/intro-js/step}}
+        </td>
+        <td class="collapsing">{{job-template-action-button size="small" color="green" icon="plus"}}</td>
+        <td class="collapsing">{{job-template-action-button size="small" color="gray" icon="clone"}}</td>
+        <td class="collapsing">{{job-template-edit-button templateId=tl.id}}</td>
+        <td class="collapsing">{{job-template-action-button size="small" color="red" icon="close"}}</td>
       </tr>
     {{/each}}
   </tbody>
 </table>
 
-{{#link-to "job-templates.new" tagName="button" class="large ui green button"}}New Template{{/link-to}}

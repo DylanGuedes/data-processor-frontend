@@ -1,0 +1,23 @@
+<div class="ui form">
+  <div class="three fields">
+    <div class="ui field">
+      {{#intro-js/step step=4 intro="Let's add a new field for our resource: the temperature of the resource. Fill the field with `temperature` value."}}
+      {{input value=paramTitle placeholder="Param title..." class="param-title-input"}}
+      {{/intro-js/step}}
+    </div>
+
+    <div class="ui field">
+      {{#intro-js/step step=5 intro="Now, fill in its type: <b>double</b>."}}
+      {{input value=paramValue placeholder="Param Value..." class="param-value-input"}}
+      {{/intro-js/step}}
+    </div>
+
+    <div class="ui field">
+      {{#intro-js/step step=6 intro="Now, send it!"}}
+      <button class="ui labeled icon fluid green button add-param" {{action "addParam"}}>
+        <i class="plus icon"></i>Add Param
+      </button>
+      {{/intro-js/step}}
+    </div>
+  </div>
+</div>

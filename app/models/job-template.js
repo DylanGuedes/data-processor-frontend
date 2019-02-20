@@ -14,5 +14,26 @@ export default DS.Model.extend({
   }),
   getFunctionalParams: computed('userParams', function() {
     return this.userParams['functionalParams'];
+  }),
+  schemaCount: computed('userParams', function() {
+    if (this.userParams.hasOwnProperty('schema')) {
+      return Object.keys(this.userParams['schema']).length;
+    } else {
+      return 0;
+    }
+  }),
+  interscityCount: computed('userParams', function() {
+    if (this.userParams.hasOwnProperty('interscity')) {
+      return Object.keys(this.userParams['interscity']).length;
+    } else {
+      return 0;
+    }
+  }),
+  functionalCount: computed('userParams', function() {
+    if (this.userParams.hasOwnProperty('functional')) {
+      return Object.keys(this.userParams['functional']).length;
+    } else {
+      return 0;
+    }
   })
 });

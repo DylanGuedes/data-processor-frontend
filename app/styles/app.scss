@@ -16,7 +16,10 @@ $auxiliar-color-3: #A40004;
 $auxiliar-color-4: #FE3F44;
 $auxiliar-color-5: #FE7276;
 
+$blue: #2185d0;
+
 body {
+  font-family: Cantarell;
 }
 
 #data-processor-main-content {
@@ -28,22 +31,24 @@ body {
   flex-wrap: wrap;
 }
 
-//   --main-color-1: #086CA2;
-//   --main-color-2: #235B79;
-//   --main-color-3: #034569;
-//   --main-color-4: #3C9DD0;
-//   --main-color-5: #64AAD0;
-//   --secondary-color-1: #FFCA00;
-//   --secondary-color-2: #BFA130;
-//   --secondary-color-3: #A68300;
-//   --secondary-color-4: #FFD740;
-//   --secondary-color-5: #FFE273;
-//   --auxiliar-color-1: #FD0006;
-//   --auxiliar-color-2: #BE2F33;
-//   --auxiliar-color-3: #A40004;
-//   --auxiliar-color-4: #FE3F44;
-//   --auxiliar-color-5: #FE7276;
-// }
-//
-// .primaryColor {
-// }
+h1.ui.header, h2.ui.header {
+  font-family: DejaVu Sans;
+  .sub.header {
+    font-family: Cantarell;
+  }
+}
+
+button.ui.button {
+  font-family: Cantarell;
+}
+
+a.ui.item {
+  font-family: Cantarell;
+}
+
+.add-highlight {
+  &:hover {
+    cursor: pointer;
+    background-color: #fafcff;
+  }
+}

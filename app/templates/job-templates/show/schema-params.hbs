@@ -1,1 +1,25 @@
-{{spark-template-param-list paramType="schema" prms=this.model.getSchemaParams model=this.model}}
+<h2 class="ui top attached sub header">Add New Param</h2>
+
+<div class="ui attached segment">
+  {{schema-form template=model}}
+</div>
+
+<h2 class="ui top attached sub header">Template Params</h2>
+
+<div class="ui attached segment">
+  <table class="ui very basic celled padded table">
+    <tbody>
+      {{#each-in model.userParams.schema as |key val|}}
+      <tr>
+        <td class="param-key">{{key}}</td>
+        <td class="param-value">{{val}}</td>
+        <td class="collapsing">
+          <button class="mini ui compact icon red button" {{action "deleteParam" key}}>
+            <i class="ui close icon"></i>
+          </button>
+        </td>
+      </tr>
+      {{/each-in}}
+    </tbody>
+  </table>
+</div>

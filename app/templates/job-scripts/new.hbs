@@ -7,14 +7,14 @@
       {{input value=title placeholder="Script title..."}}
       {{model}}
       {{#each model.errors.username as |error|}}
-      {{error.message}}
+        {{error.message}}
       {{/each}}
     </div>
 
     <div class="ui field">
       <label>Script Programming Language (*)</label>
       {{#ui-dropdown class="selection" selected="python" onChange=(action (mut language))}}
-      <div class="default text">Python</div>
+      <div class="default text">python</div>
       <i class="dropdown icon"></i>
       <div class="menu">
         <div data-value="python" class="item">Python</div>
