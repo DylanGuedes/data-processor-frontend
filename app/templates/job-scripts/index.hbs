@@ -3,24 +3,24 @@
 {{#link-to "job-scripts.new" class="ui labeled icon green button"}}<i class="plus icon"></i>New Script{{/link-to}}
 
 <div class="ui segment">
-<div class="ui cards">
-  {{#each this.model as |script|}}
-    <div class="ui card">
-      <div class="content">
-        <div class="header">
-          {{#link-to "job-scripts.show" script.id}}{{script.title}}{{/link-to}}
+  <div class="ui cards">
+    {{#each this.model as |script|}}
+      <div class="ui card">
+        <div class="content">
+          <div class="header">
+            {{#link-to "job-scripts.show" script.id}}{{script.title}}{{/link-to}}
+          </div>
+          <div class="description">
+            {{job-script-code code=script.codeSample}}
+          </div>
         </div>
-        <div class="description">
-          {{job-script-code code=script.codeSample}}
-        </div>
-      </div>
 
-      <div class="extra content">
-        <div class="right floated meta">
-          {{script.language}}
+        <div class="extra content">
+          <div class="right floated meta">
+            {{script.language}}
+          </div>
         </div>
       </div>
-    </div>
-  {{/each}}
-</div>
+    {{/each}}
+  </div>
 </div>

@@ -7,6 +7,7 @@ const Router = EmberRouter.extend({
 });
 
 Router.map(function() {
+  this.route('/');
   this.route('tutorial');
   this.route('jobs');
   this.route('handlers');
@@ -14,6 +15,9 @@ Router.map(function() {
     this.route('index');
     this.route('new');
     this.route('show', { path: '/:id' }, function() {
+      this.route('code');
+      this.route('info');
+      this.route('actions');
     });
   });
   this.route('job-templates', function() {

@@ -1,8 +1,19 @@
-<h1>{{model.title}}</h1>
+<div class="ui grid">
+  <div class="four wide column">
+    <div class="ui raised segment">
+      <h1 class="ui center aligned sub header">
+        {{this.model.title}}
+      </h1>
 
-Code:
+      <div class="ui vertical fluid tabular menu">
+        {{#link-to "job-scripts.show.info" class="ui item"}}Info{{/link-to}}
+        {{#link-to "job-scripts.show.code" class="ui item"}}Code{{/link-to}}
+        {{#link-to "job-scripts.show.actions" class="ui item"}}Actions{{/link-to}}
+      </div>
+    </div>
+  </div>
 
-<div class="ui segment">
-  <div class="ui top right attached label">Code</div>
-  {{job-script-code code=model.code}}
+  <div class="twelve wide column">
+    {{outlet}}
+  </div>
 </div>

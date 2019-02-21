@@ -7,6 +7,9 @@ export default Controller.extend({
     startTutorial() {
       this.transitionToRoute('job-templates.index');
       this.get('tutorial').set('ongoingTutorial', true);
+    },
+    toggleMenu() {
+      $('.sidebar').sidebar('toggle');
     }
   }
 });

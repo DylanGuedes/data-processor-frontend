@@ -18,7 +18,7 @@
           {{#intro-js/step step=3 intro="The first type, named <b>schema</b>, is related to the schema of the resource registered at InterSCity. The key is the name of the field, and the value its type (double, integer or string)."}}
             {{#link-to "job-templates.show.schema_params" class="ui item"}}
               Schema Params
-              <div class="ui label">
+              <div class="ui black label">
                 {{this.model.schemaCount}}
               </div>
             {{/link-to}}
@@ -26,14 +26,14 @@
 
           {{#link-to "job-templates.show.interscity_params" class="ui item"}}
             InterSCity Params
-            <div class="ui label">
+            <div class="ui black label">
               {{this.model.interscityCount}}
             </div>
           {{/link-to}}
 
           {{#link-to "job-templates.show.functional_params" class="ui item"}}
             Functional Params
-            <div class="ui label">
+            <div class="ui black label">
               {{this.model.functionalCount}}
             </div>
           {{/link-to}}

@@ -52,3 +52,38 @@ a.ui.item {
     background-color: #fafcff;
   }
 }
+
+body.landpage {
+  background-color: blue !important;
+  .pusher {
+    background-color: blue !important;
+    .ui.segment.raised {
+      padding: 100px;
+      background-color: blue !important;
+      box-shadow: 7px 7px 20px 8px darkblue;
+      margin-top: 100px;
+      p.content {
+        color: white !important;
+        font-weight: 600;
+      }
+      h1.header {
+        font-weight: 900;
+        margin-top: 100px;
+        color: white !important;
+        font-family: Cantarell;
+      }
+      .ui.massive.icon {
+        margin-top: 100px;
+      }
+      i {
+        color: white !important;
+      }
+      button {
+        background-color: blue !important;
+        color: white !important;
+        font-weight: 600;
+        border: 2px solid white;
+      }
+    }
+  }
+}
