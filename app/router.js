@@ -8,9 +8,7 @@ const Router = EmberRouter.extend({
 
 Router.map(function() {
   this.route('/');
-  this.route('tutorial');
-  this.route('jobs');
-  this.route('handlers');
+
   this.route('job-scripts', function() {
     this.route('index');
     this.route('new');
@@ -20,6 +18,7 @@ Router.map(function() {
       this.route('actions');
     });
   });
+
   this.route('job-templates', function() {
     this.route('index');
     this.route('new');
@@ -29,6 +28,14 @@ Router.map(function() {
       this.route('interscity_params');
       this.route('functional_params');
       this.route('publish_strategy_params');
+      this.route('actions');
+    });
+  });
+
+  this.route('processing-jobs', function() {
+    this.route('index');
+    this.route('show', { path: '/:id' }, function() {
+      this.route('extra_info');
       this.route('actions');
     });
   });

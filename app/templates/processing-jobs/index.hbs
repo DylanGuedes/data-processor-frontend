@@ -1,0 +1,65 @@
+<div class="ui grid">
+
+  <div class="eight wide column">
+    <h1 class="ui header center aligned">Jobs Listing</h1>
+
+    <div class="ui center aligned">
+      <div class="ui red statistic">
+        <div class="value">
+          {{model.length}}
+        </div>
+        <div class="label">
+          Jobs
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="eight wide column">
+    <table class="ui celled table">
+      <thead class="ui inverted table">
+        <tr>
+          <th>Uuid</th>
+          <th>Script</th>
+          <th>
+            {{#ui-popup html="(TODO) <b>Schedule</b>: Instantiate a new job that uses this template params for execution."}}
+              [S]
+            {{/ui-popup}}
+          </th>
+          <th>
+            {{#ui-popup html="(TODO) <b>Clone</b>: create a new template using this template as base."}}
+              [C]
+            {{/ui-popup}}
+          </th>
+          <th>
+            {{#ui-popup html="<b>Edit</b>: Edit this template params."}}
+              [E]
+            {{/ui-popup}}
+          </th>
+          <th>
+            {{#ui-popup html="(TODO) <b>Remove</b>: Remove this template. Forever."}}
+              [R]
+            {{/ui-popup}}
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each this.model as |job|}}
+          <tr>
+            <td>
+              {{#link-to "processing-jobs.show" job.id}}
+                {{job.uuid}}
+              {{/link-to}}
+            </td>
+            <td class="collapsing">{{job.jobTemplate.jobScript.title}}</td>
+            <td class="collapsing">{{job-template-action-button size="small" color="green" icon="plus"}}</td>
+            <td class="collapsing">{{job-template-action-button size="small" color="gray" icon="clone"}}</td>
+            <td class="collapsing">{{job-template-edit-button templateId=tl.id}}</td>
+            <td class="collapsing">{{job-template-action-button size="small" color="red" icon="close"}}</td>
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+
+</div>

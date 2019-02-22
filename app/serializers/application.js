@@ -1,5 +1,5 @@
 import DS from 'ember-data';
-import { decamelize, camelize, dasherize } from '@ember/string';
+import { dasherize } from '@ember/string';
 
 export default DS.JSONAPISerializer.extend({
   keyForAttribute(attr) {

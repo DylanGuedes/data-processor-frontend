@@ -1,62 +1,37 @@
-{{#intro-js/step step=1 intro="You are now seeing a template home. At the end of this tour, you will schedule a job that use this template as a base for a Spark job."}}
-{{/intro-js/step}}
-
-<div class="ui grid">
-  <div class="four wide column">
-    <div class="ui raised segment">
-
-      <h1 class="ui center aligned sub header">
-        {{this.model.title}}
-      </h1>
-
-      <div class="ui vertical fluid tabular menu">
-        {{#link-to "job-templates.show.extra_info" class="ui item"}}Info{{/link-to}}
-
-        {{#link-to "job-templates.show.actions" class="ui item"}}Actions{{/link-to}}
-
-        {{#intro-js/step step=2 intro="First, let's customize a few parameters! There are 4 types of parameters: schema, interscity's, functional's and publish strategies."}}
-          {{#intro-js/step step=3 intro="The first type, named <b>schema</b>, is related to the schema of the resource registered at InterSCity. The key is the name of the field, and the value its type (double, integer or string)."}}
-            {{#link-to "job-templates.show.schema_params" class="ui item"}}
-              Schema Params
-              <div class="ui black label">
-                {{this.model.schemaCount}}
-              </div>
-            {{/link-to}}
-          {{/intro-js/step}}
-
-          {{#link-to "job-templates.show.interscity_params" class="ui item"}}
-            InterSCity Params
-            <div class="ui black label">
-              {{this.model.interscityCount}}
-            </div>
-          {{/link-to}}
-
-          {{#link-to "job-templates.show.functional_params" class="ui item"}}
-            Functional Params
-            <div class="ui black label">
-              {{this.model.functionalCount}}
-            </div>
-          {{/link-to}}
-        {{/intro-js/step}}
-      </div>
-    </div>
+<div class="job-templates-show">
+  <div class="ui inverted segment">
+    <h1 class="ui header center aligned">
+      {{this.model.title}}
+    </h1>
   </div>
 
-  <div class="twelve wide stretched column">
-    {{#each flashMessages.queue as |flash|}}
-      {{#flash-message flash=flash as |component flash|}}
-      <div class="ui attached {{flash.type}} message">
-          <i class="close icon"></i>
-          <div class="header">
-            Done.
-          </div>
-          <p>{{flash.message}}</p>
-        </div>
-      {{/flash-message}}
-    {{/each}}
+  <div class="ui center aligned grid">
+    <div class="four wide column action-panel">
+      <div class="ui inverted segment raised action-buttons">
+        <VerticalJobTemplateActionButton @routeToLink={{"job-templates.show.extra_info"}} @color={{"purple"}} />
 
-    <div class="ui raised attached segment">
-      {{outlet}}
+        <div class="ui inverted divider"></div>
+
+        <VerticalJobTemplateActionButton @routeToLink={{"job-templates.show.actions"}} @color={{"violet"}} />
+
+        <div class="ui inverted divider"></div>
+
+        <VerticalJobTemplateActionButton @routeToLink={{"job-templates.show.schema_params"}} @color={{"red"}} />
+
+        <div class="ui inverted divider"></div>
+
+        <VerticalJobTemplateActionButton @routeToLink={{"job-templates.show.interscity_params"}} @color={{"brown"}} />
+
+        <div class="ui inverted divider"></div>
+
+        <VerticalJobTemplateActionButton @routeToLink={{"job-templates.show.functional_params"}} @color={{"black"}} />
+      </div>
+    </div>
+
+    <div class="twelve wide stretched column main-stuff">
+      <div class="ui raised segment">
+        {{outlet}}
+      </div>
     </div>
   </div>
 </div>

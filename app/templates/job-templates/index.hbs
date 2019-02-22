@@ -1,67 +1,38 @@
-<div class="ui grid">
+<div class="job-templates-index">
 
-  <div class="eight wide column">
+  <div class="ui inverted segment">
     <h1 class="ui header center aligned">Available Templates</h1>
+  </div>
 
-    <div class="ui center aligned">
-      <div class="ui red statistic">
-        <div class="value">
-          {{model.length}}
+  <div class="ui middle aligned padded equal height grid">
+    <div class="row">
+      <div class="two wide center aligned column">
+        <button class="ui circular icon button" {{action "flipLeft"}}>
+          <i class="left arrow icon"></i>
+        </button>
+      </div>
+
+      <div class="twelve wide center aligned column">
+        <div class="ui shape">
+          <div class="sides">
+            {{#each this.model as |tl idx|}}
+              <TemplateSideCard @template={{tl}} @idx={{idx}}/>
+            {{/each}}
+          </div>
         </div>
-        <div class="label">
-          Templates
-        </div>
+      </div>
+
+      <div class="two wide center aligned column">
+        <button class="ui circular icon button" {{action "flipRight"}}>
+          <i class="right arrow icon"></i>
+        </button>
       </div>
     </div>
   </div>
 
-  <div class="eight wide column">
-    {{#link-to "job-templates.new" class="ui labeled icon green button" tagName="button"}}<i class="plus icon"></i>New Template{{/link-to}}
+  <div class="ui divider"/>
 
-    <table class="ui celled table">
-      <thead class="ui inverted table">
-        <tr>
-          <th>Name</th>
-          <th>
-            {{#ui-popup html="(TODO) <b>Schedule</b>: Instantiate a new job that uses this template params for execution."}}
-              [S]
-            {{/ui-popup}}
-          </th>
-          <th>
-            {{#ui-popup html="(TODO) <b>Clone</b>: create a new template using this template as base."}}
-              [C]
-            {{/ui-popup}}
-          </th>
-          <th>
-            {{#ui-popup html="<b>Edit</b>: Edit this template params."}}
-              [E]
-            {{/ui-popup}}
-          </th>
-          <th>
-            {{#ui-popup html="(TODO) <b>Remove</b>: Remove this template. Forever."}}
-              [R]
-            {{/ui-popup}}
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        {{#each this.model as |tl|}}
-          <tr>
-            <td>
-              {{#intro-js/step step=2 intro="Pick a template"}}
-                {{#link-to "job-templates.show" tl.id}}
-                  {{tl.title}}
-                {{/link-to}}
-              {{/intro-js/step}}
-            </td>
-            <td class="collapsing">{{job-template-action-button size="small" color="green" icon="plus"}}</td>
-            <td class="collapsing">{{job-template-action-button size="small" color="gray" icon="clone"}}</td>
-            <td class="collapsing">{{job-template-edit-button templateId=tl.id}}</td>
-            <td class="collapsing">{{job-template-action-button size="small" color="red" icon="close"}}</td>
-          </tr>
-        {{/each}}
-      </tbody>
-    </table>
-  </div>
-
+  {{#link-to "job-templates.new" class="ui bottom attached fixed labeled icon green button" tagName="button"}}
+    <i class="plus icon"></i>New Template
+  {{/link-to}}
 </div>

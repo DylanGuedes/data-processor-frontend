@@ -6,13 +6,15 @@ export default Controller.extend({
       const title = this.get('title');
       const scriptId = this.get('scriptId');
 
-      let script = this.store.peekRecord('job-script', scriptId);
+      this.store.findRecord('job-script', scriptId).then((script) => {
 
-      let template = this.store.createRecord('job-template', {
-        title: title, jobScript: script
-      });
-      template.save().then(() => {
-        this.transitionToRoute('job-templates.show', template);
+        let template = this.store.createRecord('job-template', {
+          title: title, jobScript: script
+        });
+
+        template.save().then(() => {
+          this.transitionToRoute('job-templates.show', template);
+        });
       });
     }
   }

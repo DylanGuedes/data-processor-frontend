@@ -1,0 +1,19 @@
+<div class="ui fluid card">
+  <div class="content">
+    <div class="header">
+      {{#link-to "job-templates.show" template}}{{template.title}}{{/link-to}}
+    </div>
+    <div class="meta">
+      {{template.jobScript.codeSample}}
+    </div>
+    <div class="description">
+      Runs script {{#link-to "job-scripts.show" template.jobScript.id}}{{template.jobScript.title}}{{/link-to}}
+    </div>
+  </div>
+  <div class="extra content">
+    {{job-template-action-button size="small" color="green" icon="plus"}}
+    {{job-template-action-button size="small" color="gray" icon="clone"}}
+    {{job-template-edit-button templateId=template.id}}
+    {{job-template-action-button size="small" color="red" icon="close"}}
+  </div>
+</div>

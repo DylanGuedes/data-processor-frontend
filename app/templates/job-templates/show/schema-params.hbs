@@ -1,3 +1,5 @@
+<h1 class="ui header">Schema Params</h1>
+
 <h2 class="ui top attached sub header">Add New Param</h2>
 
 <div class="ui attached segment">
@@ -10,15 +12,15 @@
   <table class="ui very basic celled padded table">
     <tbody>
       {{#each-in model.userParams.schema as |key val|}}
-      <tr>
-        <td class="param-key">{{key}}</td>
-        <td class="param-value">{{val}}</td>
-        <td class="collapsing">
-          <button class="mini ui compact icon red button" {{action "deleteParam" key}}>
-            <i class="ui close icon"></i>
-          </button>
-        </td>
-      </tr>
+        <tr>
+          <td class="param-key">{{key}}</td>
+          <td class="param-value">{{val}}</td>
+          <td class="collapsing">
+            <button class="mini ui compact icon red button" {{action "deleteParam" key}}>
+              <i class="ui close icon"></i>
+            </button>
+          </td>
+        </tr>
       {{/each-in}}
     </tbody>
   </table>

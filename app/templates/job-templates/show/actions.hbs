@@ -1,25 +1,41 @@
-<h1 class="ui sub header">actions</h1>
+<h1 class="ui header">Actions</h1>
 
-<div class="ui container" {{action "scheduleJob"}}>
-  <h2 class="ui center aligned icon header green add-highlight">
-    <i class="circular plus icon"></i>
-    Schedule
-    <div class="sub header">Schedule a new job to process InterSCity's data using this template params.</div>
-  </h2>
-</div>
+<table class="ui very basic padded table">
+  <tbody>
+    <tr>
+      <td class="right aligned wide">
+        <button class="ui green inverted big circular button icon" {{action "scheduleJob"}}>
+          <i class="plus icon"></i>
+        </button>
+      </td>
 
-<div class="ui container" {{action "cloneTemplate"}}>
-  <h2 class="ui center aligned icon header violet add-highlight">
-    <i class="circular clone violet icon"></i>
-    Clone
-    <div class="sub header">Creates a new template using this one as base.</div>
-  </h2>
-</div>
+      <td>
+        Schedule a new job to process InterSCity's data using this template params.
+      </td>
+    </tr>
 
-<div class="ui container" {{action "removeTemplate"}}>
-  <h2 class="ui center aligned icon header red add-highlight">
-    <i class="circular remove red icon"></i>
-    Delete
-    <div class="sub header">Delete this template. Forever.</div>
-  </h2>
-</div>
+    <tr>
+      <td class="right aligned wide">
+        <button class="ui violet inverted big circular button icon" {{action "cloneTemplate"}}>
+          <i class="clone icon"></i>
+        </button>
+      </td>
+
+      <td>
+        <p class="left aligned">Schedule a new job to process InterSCity's data using this template params.</p>
+      </td>
+    </tr>
+
+    <tr>
+      <td class="right aligned wide">
+        <button class="ui red inverted big circular button icon" {{action "removeTemplate"}}>
+          <i class="remove icon"></i>
+        </button>
+      </td>
+
+      <td>
+        Delete this template. Forever.
+      </td>
+    </tr>
+  </tbody>
+</table>

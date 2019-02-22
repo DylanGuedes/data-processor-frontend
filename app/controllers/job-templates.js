@@ -17,15 +17,10 @@ export default Controller.extend({
           title: "Tutorial's Template"
         }
       }).then(function(tutorialTemplates) {
-        if (tutorialTemplates.length == 0) {
-          console.log("Please, populate data-processor with seeds.");
-        } else {
-          const template = tutorialTemplates.get("firstObject");
-          _this.transitionToRoute('job-templates.show.schema_params', template);
-          _this.get('tutorial').set('ongoingTutorial', true);
-        }
-      }).catch(function(err) {
-        console.log(err);
+        const template = tutorialTemplates.get("firstObject");
+        _this.transitionToRoute('job-templates.show.schema_params', template);
+        _this.get('tutorial').set('ongoingTutorial', true);
+      }).catch(function() {
         throw new Error("Data-Collector is not available.");
       });
     }

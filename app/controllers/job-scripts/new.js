@@ -1,14 +1,16 @@
 import Controller from '@ember/controller';
+import { get } from '@ember/object';
 
 export default Controller.extend({
   actions: {
     createScript() {
-      const title = this.get('title');
-      const path = this.get('path');
-      const code = this.get('code');
-      const lang = this.get('language');
+      const title = get(this, 'title');
+      const path = get(this, 'path');
+      const code = get(this, 'code');
+      const lang = get(this, 'language');
+      const store = get(this, 'store');
 
-      let scriptInstance = this.store.createRecord('job-script', {
+      let scriptInstance = store.createRecord('job-script', {
         title: title,
         path: path,
         code: code,

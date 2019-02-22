@@ -1,0 +1,23 @@
+<div class="ui grid">
+  <div class="four wide column">
+    <div class="ui raised segment">
+
+      <h1 class="ui center aligned sub header">
+        Job {{this.model.uuid}}
+      </h1>
+
+      <div class="ui vertical fluid tabular menu">
+        {{#link-to "processing-jobs.show.extra_info" class="ui item"}}Info{{/link-to}}
+
+        {{#link-to "processing-jobs.show.actions" class="ui item"}}Actions{{/link-to}}
+
+      </div>
+    </div>
+  </div>
+
+  <div class="twelve wide stretched column">
+    <div class="ui raised segment">
+      {{outlet}}
+    </div>
+  </div>
+</div>

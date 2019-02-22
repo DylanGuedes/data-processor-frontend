@@ -1,0 +1,31 @@
+<h1 class="ui header">Extra Info</h1>
+
+<div class="ui statistic">
+  <div class="value">
+    {{#link-to "job-templates.show.schema_params"}}{{model.schemaCount}}{{/link-to}}
+  </div>
+
+  <div class="label">
+    Schema Params
+  </div>
+
+  <div class="ui divider"></div>
+
+  <div class="value">
+    {{#link-to "job-templates.show.functional_params"}}{{model.functionalCount}}{{/link-to}}
+  </div>
+
+  <div class="label">
+    Functional Params
+  </div>
+
+  <div class="ui divider"></div>
+
+  <div class="value">
+    {{#link-to "job-templates.show.interscity_params"}}{{model.interscityCount}}{{/link-to}}
+  </div>
+
+  <div class="label">
+    InterSCity Params
+  </div>
+</div>
