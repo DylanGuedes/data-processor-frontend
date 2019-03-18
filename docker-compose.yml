@@ -1,0 +1,13 @@
+version: "2"
+
+services:
+  web:
+    build: .
+    command: ember server --live-reload-port 35730
+    volumes:
+      - .:/usr/src/app
+    # Enable sending signals (CTRL+C, CTRL+P + CTRL+Q) into the container:
+    tty: true
+    ports:
+      - 4200:4200
+      - 35730:35730
