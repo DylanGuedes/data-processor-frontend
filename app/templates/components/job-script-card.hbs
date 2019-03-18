@@ -1,0 +1,19 @@
+<div class="ui fluid card">
+  <div class="content">
+    <div class="header">
+      {{#link-to "job-scripts.show" script}}{{script.title}}{{/link-to}}
+    </div>
+    <div class="meta">
+      {{script.codeSample}}
+    </div>
+    <div class="description">
+      Runs script {{#link-to "job-scripts.show" script.id}}{{script.title}}{{/link-to}}
+    </div>
+  </div>
+
+  <div class="extra content">
+    <div class="right floated meta">
+      {{script.language}}
+    </div>
+  </div>
+</div>

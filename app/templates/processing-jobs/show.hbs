@@ -1,23 +1,23 @@
-<div class="ui grid">
-  <div class="four wide column">
-    <div class="ui raised segment">
-
-      <h1 class="ui center aligned sub header">
-        Job {{this.model.uuid}}
-      </h1>
-
-      <div class="ui vertical fluid tabular menu">
-        {{#link-to "processing-jobs.show.extra_info" class="ui item"}}Info{{/link-to}}
-
-        {{#link-to "processing-jobs.show.actions" class="ui item"}}Actions{{/link-to}}
-
-      </div>
-    </div>
+<div class="processing-job-show">
+  <div class="ui inverted segment">
+    <h1 class="ui header center aligned">
+      Job {{this.model.uuid}}
+    </h1>
   </div>
 
-  <div class="twelve wide stretched column">
-    <div class="ui raised segment">
-      {{outlet}}
+  <div class="ui center aligned grid">
+    <div class="four wide column action-panel">
+      <div class="ui inverted segment raised action-buttons">
+        <VerticalJobTemplateActionButton @routeToLink={{"processing-jobs.index"}} @color={{"purple"}} />
+
+        <div class="ui inverted divider"></div>
+      </div>
+    </div>
+
+    <div class="twelve wide stretched column main-stuff">
+      <div class="ui raised segment">
+        {{outlet}}
+      </div>
     </div>
   </div>
 </div>

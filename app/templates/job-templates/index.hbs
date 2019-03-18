@@ -1,34 +1,7 @@
 <div class="job-templates-index">
+  <ResourceTitle @title={{"Template"}} />
 
-  <div class="ui inverted segment">
-    <h1 class="ui header center aligned">Available Templates</h1>
-  </div>
-
-  <div class="ui middle aligned padded equal height grid">
-    <div class="row">
-      <div class="two wide center aligned column">
-        <button class="ui circular icon button" {{action "flipLeft"}}>
-          <i class="left arrow icon"></i>
-        </button>
-      </div>
-
-      <div class="twelve wide center aligned column">
-        <div class="ui shape">
-          <div class="sides">
-            {{#each this.model as |tl idx|}}
-              <TemplateSideCard @template={{tl}} @idx={{idx}}/>
-            {{/each}}
-          </div>
-        </div>
-      </div>
-
-      <div class="two wide center aligned column">
-        <button class="ui circular icon button" {{action "flipRight"}}>
-          <i class="right arrow icon"></i>
-        </button>
-      </div>
-    </div>
-  </div>
+  <JobTemplatesListing @resources={{this.model}} />
 
   <div class="ui divider"/>
 
