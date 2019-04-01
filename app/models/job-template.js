@@ -13,7 +13,7 @@ export default DS.Model.extend({
     return this.userParams['interscity'];
   }),
   getFunctionalParams: computed('userParams', function() {
-    return this.userParams['functionalParams'];
+    return this.userParams['functional'];
   }),
   schemaCount: computed('userParams', function() {
     if (this.userParams.hasOwnProperty('schema')) {

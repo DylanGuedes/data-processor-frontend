@@ -1,0 +1,19 @@
+<div class="content">
+  <div class="header">
+    <h3>{{#link-to "job-scripts.show" script}}{{script.title}}{{/link-to}}</h3>
+  </div>
+
+  <div class="description">
+    <p>Runs script {{#link-to "job-scripts.show" script.id}}{{script.title}}{{/link-to}}</p>
+
+    <div class="meta">
+      {{script.language}}
+    </div>
+
+    <div class="extra">
+      <button class="ui circular small icon button" {{action "removeScript"}}>
+        <i class="remove icon"></i>
+      </button>
+    </div>
+  </div>
+</div>

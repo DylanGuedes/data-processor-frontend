@@ -5,8 +5,10 @@ export default DS.Model.extend({
   uuid: DS.attr(),
   jobTemplate: DS.belongsTo('job-template'),
   jobState: DS.attr(),
+  log: DS.attr(),
+  isLoading: false,
   canRunJob: computed('jobState', function() {
-    const validStates = ["unknown"];
+    const validStates = ["unknown", "finished", "error"];
     if (validStates.includes(this.jobState)) {
       return true;
     } else {
@@ -14,7 +16,7 @@ export default DS.Model.extend({
     }
   }),
   hasLog: computed('jobState', function() {
-    const validStates = ["finished"];
+    const validStates = ["finished", "error"];
     if (validStates.includes(this.jobState)) {
       return true;
     } else {

@@ -1,0 +1,22 @@
+<div class="content">
+  <div class="header">
+    <h3>
+      {{#link-to "job-templates.show" template.id}}
+        {{template.title}}
+      {{/link-to}}
+    </h3>
+  </div>
+
+  <div class="description">
+    <p>
+      Template based on script {{#link-to "job-scripts.show" script.id}}{{template.jobScript.title}}{{/link-to}}
+    </p>
+
+    <div class="extra">
+      {{job-template-action-button size="small" color="green" icon="plus"}}
+      {{job-template-action-button size="small" color="gray" icon="clone"}}
+      {{job-template-edit-button templateId=template.id}}
+      <JobTemplateDeleteButton @template={{template}} />
+    </div>
+  </div>
+</div>

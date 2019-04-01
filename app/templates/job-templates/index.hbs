@@ -1,9 +1,9 @@
-<div class="job-templates-index">
+<div class="ui container">
   <ResourceTitle @title={{"Template"}} />
 
-  <JobTemplatesListing @resources={{this.model}} />
-
-  <div class="ui divider"/>
+  <div class="ui segment">
+    <JobTemplatesListing @resources={{this.model}} />
+  </div>
 
   {{#link-to "job-templates.new" class="ui bottom attached fixed labeled icon green button" tagName="button"}}
     <i class="plus icon"></i>New Template

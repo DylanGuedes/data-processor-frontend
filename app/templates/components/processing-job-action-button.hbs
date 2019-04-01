@@ -1,3 +1,9 @@
-<button class="ui circular {{size}} {{color}} icon button">
-  <i class="icon {{icon}}"></i>
-</button>
+{{#if isloading}}
+  <button class="ui circular {{size}} {{color}} icon button loading">
+    <i class="icon {{icon}}"></i>
+  </button>
+{{else}}
+  <button class="ui circular {{size}} {{color}} icon button">
+    <i class="icon {{icon}}"></i>
+  </button>
+{{/if}}

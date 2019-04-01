@@ -1,5 +1,12 @@
 <ResourceTitle @title={{"Jobs"}} />
 
+<div class="ui modal">
+  <div class="header">Header</div>
+  <div class="content">
+    <p></p>
+  </div>
+</div>
+
 <div class="ui segment">
   <div class="ui grid">
     <div class="six wide column">
@@ -43,26 +50,29 @@
                   {{job.jobTemplate.title}}
                 {{/link-to}}
               </td>
-              <td class="collapsing">
+              <td>
                 {{#link-to "job-scripts.show" job.jobTemplate.jobScript.id}}
                   {{job.jobTemplate.jobScript.title}}
                 {{/link-to}}
               </td>
-              <td class="collapsing">
+              <td>
                 {{job.jobState}}
               </td>
               <td class="collapsing">
+                {{job.isLoading}}
+                {{job.canRunJob}}
                 {{#if job.canRunJob}}
                   <ProcessingJobActionButton @runJobAction={{action "runJob" job}} @size="small" @color="green" @icon="plus" />
                 {{else}}
-                  <DisabledButton @size="small" @color="gray" @icon="clone" />
+                  <ProcessingJobActionButton @runJobAction={{action "runJob" job}} @isloading={{true}} @size="small" @color="green" @icon="plus" />
                 {{/if}}
 
                 {{#if job.hasLog}}
-                  <ProcessingJobActionButton @onclick={{action "runJob"}} @size="small" @color="yellow" @icon="info" />
+                  <ProcessingJobActionButton @runJobAction={{action "logModal" job}} @size="small" @color="yellow" @icon="info" />
                 {{else}}
                   <DisabledButton @size="small" @color="white" @icon="info" />
                 {{/if}}
+                <FadeProcessingJobButton @job={{job}} />
               </td>
             </tr>
           {{/each}}

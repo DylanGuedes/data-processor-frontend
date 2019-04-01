@@ -1,25 +1,7 @@
-<div class="ui middle aligned padded equal height grid">
-  <div class="row">
-    <div class="two wide center aligned column">
-      <button class="ui circular {{disabled}} icon button" {{action "flipLeft"}}>
-        <i class="left arrow icon"></i>
-      </button>
+<div class="ui divided items">
+  {{#each this.resources as |tl idx|}}
+    <div class="item">
+      <JobScriptListItem @script={{tl}} @idx={{idx}} />
     </div>
-
-    <div class="twelve wide center aligned column">
-      <div class="ui shape">
-        <div class="sides">
-          {{#each this.resources as |tl idx|}}
-            <JobScriptCard @script={{tl}} @idx={{idx}} />
-          {{/each}}
-        </div>
-      </div>
-    </div>
-
-    <div class="two wide center aligned column">
-      <button class="ui circular {{disabled}} icon button" {{action "flipRight"}}>
-        <i class="right arrow icon"></i>
-      </button>
-    </div>
-  </div>
+  {{/each}}
 </div>

@@ -1,7 +1,11 @@
-<ResourceTitle @title={{"Scripts"}} />
+<div class="ui container">
+  <ResourceTitle @title={{"Scripts"}} />
 
-<JobScriptsListing @resources={{this.model}} />
+  <div class="ui segment">
+    <JobScriptsListing @resources={{this.model}} />
+  </div>
 
-{{#link-to "job-scripts.new" class="ui bottom attached fixed labeled icon green button" tagName="button"}}
-  <i class="plus icon"></i>New Script
-{{/link-to}}
+  {{#link-to "job-scripts.new" class="ui bottom attached fixed labeled icon green button" tagName="button"}}
+    <i class="plus icon"></i>New Script
+  {{/link-to}}
+</div>
