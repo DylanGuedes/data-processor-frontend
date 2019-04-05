@@ -1,5 +1,9 @@
 # data-processor-frontend
 
+<a href="https://codeclimate.com/github/DylanGuedes/data-processor-frontend/maintainability">
+  <img src="https://api.codeclimate.com/v1/badges/866b3891f97c8b778488/maintainability" />
+</a>
+
 This README outlines the details of collaborating on this Ember application.
 A short introduction of this app could easily go here.
 
