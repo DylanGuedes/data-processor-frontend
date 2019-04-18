@@ -59,8 +59,6 @@
                 {{job.jobState}}
               </td>
               <td class="collapsing">
-                {{job.isLoading}}
-                {{job.canRunJob}}
                 {{#if job.canRunJob}}
                   <ProcessingJobActionButton @runJobAction={{action "runJob" job}} @size="small" @color="green" @icon="plus" />
                 {{else}}
