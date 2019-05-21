@@ -38,13 +38,13 @@
           {{input value=fileName placeholder="my_query_result"}}
 
           {{#ui-dropdown class="label" selected="fileFormat" onChange=(action (mut fileFormat))}}
-          <div class="default text">.parquet</div>
-          <i class="dropdown icon"></i>
-          <div class="menu">
-            <div data-value="parquet" class="item">.parquet</div>
-            <div data-value="json" class="item">.json</div>
-            <div data-value="csv" class="item">.csv</div>
-          </div>
+            <div class="default text">.parquet</div>
+            <i class="dropdown icon"></i>
+            <div class="menu">
+              <div data-value="parquet" class="item">.parquet</div>
+              <div data-value="json" class="item">.json</div>
+              <div data-value="csv" class="item">.csv</div>
+            </div>
           {{/ui-dropdown}}
         </div>
       </div>
