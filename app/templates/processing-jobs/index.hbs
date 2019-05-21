@@ -1,4 +1,4 @@
-<ResourceTitle @title={{"Query Jobs"}} />
+<ResourceTitle @title={{"Processing Jobs"}} />
 
 <div class="ui modal">
   <div class="header">Header</div>
@@ -9,8 +9,8 @@
 
 <div class="ui segment">
   <div class="ui grid">
-    <div class="six wide column">
-      <h1 class="ui header center aligned">Queries Statistics</h1>
+    <div class="five wide column">
+      <h1 class="ui header center aligned">Statistics</h1>
 
       <div class="ui center aligned">
         <center>
@@ -26,14 +26,15 @@
       </div>
     </div>
 
-    <div class="ten wide column">
+    <div class="eleven wide column">
       <table class="ui celled table">
         <thead class="ui inverted table">
           <tr>
-            <th>Uuid (Query Identifier)</th>
-            <th>Query (template)</th>
-            <th>Query (script)</th>
+            <th>Uuid</th>
+            <th>Template</th>
+            <th>Script</th>
             <th>Status</th>
+            <th>Date</th>
             <th>Actions</th>
           </tr>
         </thead>
@@ -45,32 +46,51 @@
                   {{job.uuid}}
                 {{/link-to}}
               </td>
+
               <td class="collapsing">
                 {{#link-to "job-templates.show" job.jobTemplate.id}}
                   {{job.jobTemplate.title}}
                 {{/link-to}}
               </td>
+
               <td>
                 {{#link-to "job-scripts.show" job.jobTemplate.jobScript.id}}
                   {{job.jobTemplate.jobScript.title}}
                 {{/link-to}}
               </td>
-              <td>
-                {{job.jobState}}
+
+              <td class="collapsing">
+                <div class="ui label {{job.jobStateColor}}">
+                  <i class="{{job.jobStateIcon}} icon"></i>
+                  {{job.jobState}}
+                </div>
               </td>
+
+              <td>{{moment-calendar job.updatedAt}}</td>
+
               <td class="collapsing">
                 {{#if job.canRunJob}}
-                  <ProcessingJobActionButton @runJobAction={{action "runJob" job}} @size="small" @color="green" @icon="plus" />
+                  {{#ui-popup content="Rerun this processing job." tagName="span"}}
+                    <ProcessingJobActionButton @runJobAction={{action "runJob" job}} @size="small" @color="green" @icon="plus" />
+                  {{/ui-popup}}
                 {{else}}
-                  <ProcessingJobActionButton @runJobAction={{action "runJob" job}} @isloading={{true}} @size="small" @color="green" @icon="plus" />
+                  {{#ui-popup content="An instance of this job is already running." tagName="span"}}
+                    <ProcessingJobActionButton @runJobAction={{action "runJob" job}} @isloading={{true}} @size="small" @color="green" @icon="plus" />
+                  {{/ui-popup}}
                 {{/if}}
 
                 {{#if job.hasLog}}
-                  <ProcessingJobActionButton @runJobAction={{action "logModal" job}} @size="small" @color="yellow" @icon="info" />
+                  {{#ui-popup content="Click here to check this job log." tagName="span"}}
+                    <ProcessingJobActionButton @runJobAction={{action "logModal" job}} @size="small" @color="yellow" @icon="info" />
+                  {{/ui-popup}}
                 {{else}}
-                  <DisabledButton @size="small" @color="white" @icon="info" />
+                  {{#ui-popup content="No log available for this job." tagName="span"}}
+                    <DisabledButton @size="small" @color="white" @icon="info" />
+                  {{/ui-popup}}
                 {{/if}}
-                <FadeProcessingJobButton @job={{job}} />
+                {{#ui-popup content="Fade this job. This will delete it forever." tagName="span"}}
+                  <FadeProcessingJobButton @job={{job}} />
+                {{/ui-popup}}
               </td>
             </tr>
           {{/each}}

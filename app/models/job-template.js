@@ -6,6 +6,7 @@ export default DS.Model.extend({
   userParams: DS.attr(),
   scheduledJobs: DS.attr(),
   jobScript: DS.belongsTo('job-script'),
+  updatedAt: DS.attr(),
   getSchemaParams: computed('userParams', function() {
     return this.userParams['schema'];
   }),

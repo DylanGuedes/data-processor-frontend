@@ -18,5 +18,9 @@
       {{job-template-edit-button templateId=template.id}}
       <JobTemplateDeleteButton @template={{template}} />
     </div>
+
+    <div class="meta">
+      {{moment-calendar template.updatedAt}}
+    </div>
   </div>
 </div>

@@ -6,12 +6,14 @@
   <div class="description">
     <p>Runs script {{#link-to "job-scripts.show" script.id}}{{script.title}}{{/link-to}}</p>
 
+    {{script.language}}
+
     <div class="meta">
-      {{script.language}}
+      {{moment-calendar script.createdAt}}
     </div>
 
     <div class="extra">
-      <button class="ui circular small icon button" {{action "removeScript"}}>
+      <button class="ui red circular small icon button" {{action "removeScript"}}>
         <i class="remove icon"></i>
       </button>
     </div>
