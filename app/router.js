@@ -19,6 +19,8 @@ Router.map(function() {
     });
   });
 
+  this.route('define-query');
+
   this.route('job-templates', function() {
     this.route('index');
     this.route('new');
