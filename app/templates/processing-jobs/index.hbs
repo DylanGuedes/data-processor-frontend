@@ -9,7 +9,7 @@
 
 <div class="ui segment">
   <div class="ui grid">
-    <div class="five wide column">
+    <div class="four wide column">
       <h1 class="ui header center aligned">Statistics</h1>
 
       <div class="ui center aligned">
@@ -26,7 +26,7 @@
       </div>
     </div>
 
-    <div class="eleven wide column">
+    <div class="twelve wide column">
       <table class="ui celled table">
         <thead class="ui inverted table">
           <tr>
@@ -71,11 +71,15 @@
               <td class="collapsing">
                 {{#if job.canRunJob}}
                   {{#ui-popup content="Rerun this processing job." tagName="span"}}
-                    <ProcessingJobActionButton @runJobAction={{action "runJob" job}} @size="small" @color="green" @icon="plus" />
+                    <ProcessingJobActionButton @runJobAction={{action "runJob" job}} @size="small" @color="green" @icon="play" />
+                  {{/ui-popup}}
+
+                  {{#ui-popup content="Preview this processing job." tagName="span"}}
+                    <ProcessingJobActionButton @runJobAction={{action "previewJob" job}} @size="small" @color="blue" @icon="play" />
                   {{/ui-popup}}
                 {{else}}
                   {{#ui-popup content="An instance of this job is already running." tagName="span"}}
-                    <ProcessingJobActionButton @runJobAction={{action "runJob" job}} @isloading={{true}} @size="small" @color="green" @icon="plus" />
+                    <ProcessingJobActionButton @runJobAction={{action "runJob" job}} @isloading={{true}} @size="small" @color="green" @icon="play" />
                   {{/ui-popup}}
                 {{/if}}
 

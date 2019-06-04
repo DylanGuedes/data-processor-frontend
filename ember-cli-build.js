@@ -6,6 +6,10 @@ module.exports = function(defaults) {
   let app = new EmberApp(defaults, {
     sassOptions: {
       extension: 'scss'
+    },
+    fingerprint: {
+      enabled: true,
+      prepend: 'http://localhost:8000/processor'
     }
   });
 

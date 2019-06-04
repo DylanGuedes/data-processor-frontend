@@ -1,11 +1,12 @@
 'use strict';
 
 module.exports = function(environment) {
+  console.log(environment);
   let ENV = {
+    rootURL: '/',
     modulePrefix: 'data-processor-frontend',
     environment,
-    rootURL: '/',
-    locationType: 'auto',
+    locationType: 'none',
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
